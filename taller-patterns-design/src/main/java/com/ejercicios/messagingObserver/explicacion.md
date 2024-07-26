@@ -18,77 +18,89 @@ ejecución sin necesidad de modificar la lógica principal de la aplicación.
 
 Se decidio implementar el patron de comportamiento observador, ideal para escenarios en los que necesitas notificar a múltiples objetos cuando ocurre un cambio en el estado de un objeto. Es perfecto para el sistema de mensajería donde los dispositivos deben recibir notificaciones en tiempo real.
 
-### Registro:
+### Subject (Interfaz)
 
-Los dispositivos se registran con el `User` usando el método `addDevice`. Cada dispositivo se convierte en un observador que estará interesado en recibir notificaciones.
+- Define los métodos que deben implementar los sujetos.
+- Asociado a la clase User con una relación de implementación.
 
-### Envío de Mensaje:
+### User (Clase Concreta que Implementa Subject)
 
-Cuando se envía un mensaje, el `MessagingService` llama al método notifyDevices del User.
+- Implementa Subject y gestiona una lista de observadores (Observer).
+- Asociado a Observer con una relación de 1 a muchos (un User puede tener múltiples Observer).
 
-### Notificación:
+Métodos:
 
-El método `notifyDevices` del User itera sobre la lista de dispositivos y llama al método notify en cada dispositivo, entregando el mensaje.
+* +addDevice(observer: Observer): void: Añade un observador a la lista.
+* +removeDevice(observer: Observer): void: Elimina un observador de la lista.
+* +notifyDevices(message: Message): void: Notifica a todos los observadores con el mensaje.
 
 
-### Recepción de Mensaje:
+### Observer (Interfaz)
 
-Cada dispositivo recibe la notificación a través de su método `notify` y maneja el mensaje de acuerdo con su implementación específica.
-Esta implementación permite una comunicación eficiente y flexible entre el sujeto (`User`) y sus observadores (`Device`), cumpliendo con los principios del patrón Observer.
+- Define el método que los observadores deben implementar para recibir notificaciones.
+- Implementado por MobileDevice y DesktopDevice.
+
+### MobileDevice y DesktopDevice (Clases Concretas que Implementan Observer)
+
+- Implementan Observer para manejar notificaciones.
+- Cada uno tiene un identificador (id) y maneja el mensaje a través del método notify.
+
+### Message (Clase)
+
+- Representa el mensaje que se envía a los observadores.
+- Contiene información sobre el contenido del mensaje, el remitente y la marca de tiempo.
+
+## Relaciones
+
+### User y Observer:
+
+- La relación es de uno a muchos (un User puede tener múltiples Observer).
+- Se usa una asociación bidireccional: User tiene una lista de Observer y los Observer reciben notificaciones del User.
+
+### Observer y User:
+
+- Observer es una interfaz implementada por MobileDevice y DesktopDevice.
+
+### User y Message:
+
+- Uso: User crea un objeto Message y lo pasa a sus observadores. La clase User no tiene una asociación directa con Message, pero la usa en el método notifyDevices.
+- Diagrama: No se dibuja una línea de asociación directa en el diagrama UML entre User y Message, pero Message se pasa como un parámetro en la operación notifyDevices.
+
+### Observer y Message:
+
+- Uso: Observer recibe un Message cuando el User llama a notifyDevices. Los métodos notify en MobileDevice y DesktopDevice procesan el Message.
+- Diagrama: Al igual que con User, no hay una asociación directa en el diagrama, pero el Message es un parámetro en el método notify.
 
 ## Principios solid implementados
 
 ### Single Responsibility Principle (SRP) - Principio de Responsabilidad Única
 
-Descripción:
+**Clase User:** Su única responsabilidad es manejar la lista de dispositivos (Observer) y notificarles sobre los mensajes. No tiene otras responsabilidades aparte de gestionar observadores y emitir notificaciones.
 
-Cada clase debe tener una única responsabilidad o razón para cambiar. En el contexto del patrón Observer, esto significa que cada clase tiene una responsabilidad claramente definida.
+**Clase MobileDevice y DesktopDevice:** Cada una se encarga únicamente de procesar y mostrar los mensajes que recibe. No tienen responsabilidades adicionales relacionadas con la gestión de usuarios o la creación de mensajes.
 
-Aplicación en el Patrón Observer:
-
-- User: Su responsabilidad es gestionar la lista de dispositivos y notificarles sobre los mensajes.
-- Device: Su responsabilidad es recibir y procesar notificaciones de mensajes.
-- Message: Su responsabilidad es representar el contenido del mensaje.
-
-Cada clase maneja una responsabilidad específica, lo que facilita su mantenimiento y extensión.
+**Clase Message:** Su responsabilidad es encapsular la información del mensaje. Solo maneja datos relacionados con el mensaje y no tiene otras responsabilidades.
 
 ### Open/Closed Principle (OCP) - Principio de Abierto/Cerrado
 
-Descripción:
+**Interfaz Subject:** Está abierta a la extensión pero cerrada a la modificación. Puedes añadir nuevos tipos de Subject (como diferentes tipos de usuarios) sin cambiar la interfaz Subject.
 
-Las clases deben estar abiertas para extensión, pero cerradas para modificación. Esto significa que puedes añadir nuevas funcionalidades sin modificar el código existente.
+**Interfaz Observer:** Está diseñada para ser extendida por diferentes tipos de observadores (MobileDevice, DesktopDevice). Puedes añadir nuevos tipos de observadores sin modificar la interfaz Observer.
 
-Aplicación en el Patrón Observer:
+**Clases MobileDevice y DesktopDevice:** Puedes añadir nuevos tipos de dispositivos observadores sin modificar la lógica de notificación en User.
 
-- Añadir Nuevos Tipos de Dispositivos: Puedes introducir nuevos tipos de dispositivos que implementen la interfaz Device sin modificar la clase User o las clases existentes.
-- Ampliación del Sistema de Notificación: Si decides añadir nuevas funcionalidades o tipos de notificaciones, puedes hacerlo extendiendo la interfaz Device o añadiendo nuevas implementaciones sin cambiar el código del User.
+###  Liskov Substitution Principle (LSP) - Principio de Sustitución de Liskov
 
-### Liskov Substitution Principle (LSP) - Principio de Sustitución de Liskov
+**Clases MobileDevice y DesktopDevice:** Implementan la interfaz Observer, garantizando que cada tipo de observador puede ser utilizado en lugar de cualquier otra implementación de Observer sin alterar el comportamiento esperado del sistema. La sustitución de una clase observadora por otra sigue funcionando correctamente.
 
-Descripción:
-Los objetos de una clase derivada deben poder reemplazar a los objetos de la clase base sin alterar la funcionalidad del programa.
+### Interface Segregation Principle (ISP) - Principio de Segregación de Interfaces
 
-Aplicación en el Patrón Observer:
+**Interfaz Observer:** Solo tiene un método notify(message: Message) que es relevante para los observadores. No impone métodos adicionales que los observadores no necesitarían.
 
-- Implementación de Device: Todas las clases que implementan la interfaz Device (MobileDevice, DesktopDevice, etc.) pueden ser utilizadas de forma intercambiable en la clase User sin alterar el comportamiento del sistema.
+**Interfaz Subject:** Proporciona métodos específicos para la gestión de observadores y notificaciones, evitando la inclusión de métodos que no sean necesarios para todos los sujetos.
 
+### Dependency Inversion Principle (DIP) - Principio de Inversión de Dependencias
 
-## Interface Segregation Principle (ISP) - Principio de Segregación de Interfaces
+**Dependencia en Interfaces:** La clase User depende de la interfaz Observer en lugar de depender de implementaciones concretas de dispositivos. Esto permite que User trabaje con cualquier implementación de Observer sin estar acoplado a ninguna implementación concreta.
 
-Descripción:
-
-Los clientes no deben estar forzados a depender de interfaces que no utilizan. Las interfaces deben ser específicas para el cliente.
-
-Aplicación en el Patrón Observer:
-
-- Interfaz Device: La interfaz Device tiene métodos específicos relacionados con la notificación (notify). Los dispositivos implementan solo los métodos que necesitan, evitando interfaces grandes y generales que obliguen a las clases a implementar métodos innecesarios.
-
-## Dependency Inversion Principle (DIP) - Principio de Inversión de Dependencias
-
-Descripción:
-
-Los módulos de alto nivel no deben depender de los módulos de bajo nivel, sino de abstracciones. Las abstracciones no deben depender de detalles, sino que los detalles deben depender de las abstracciones.
-
-Aplicación en el Patrón Observer:
-
-- Dependencia de User en Device: La clase User depende de la interfaz Device, no de implementaciones concretas. Esto permite que User trabaje con cualquier tipo de dispositivo que implemente la interfaz Device, sin conocer los detalles de cómo se implementa cada dispositivo.
+**Inyección de Dependencias:** Las instancias de MobileDevice y DesktopDevice se pasan a User a través de métodos (addDevice), permitiendo una mayor flexibilidad y modularidad.

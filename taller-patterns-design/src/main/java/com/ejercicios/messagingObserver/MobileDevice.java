@@ -1,6 +1,6 @@
 package main.java.com.ejercicios.messagingObserver;
 
-public class MobileDevice implements Device {
+public class MobileDevice implements Observer {
     private String id;
 
     public MobileDevice(String id) {
@@ -9,6 +9,7 @@ public class MobileDevice implements Device {
 
     @Override
     public void notify(Message message) {
-        System.out.println("MobileDevice " + id + " received message: " + message);
+        System.out.println("MobileDevice " + id + " mensaje recibido: " + message);
     }
 }
+
