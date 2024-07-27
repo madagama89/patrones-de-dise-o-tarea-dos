@@ -1,0 +1,95 @@
+<mxfile host="Electron" modified="2024-07-26T01:04:11.973Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.5.3 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="qcqC6e9doPq9ajrRyGzK" version="24.5.3" type="device">
+  <diagram name="Página-1" id="qglqV_a1tGvl2lv9p0PS">
+    <mxGraphModel dx="1290" dy="621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4aABwrlP54jVIK6EkBrr-1" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="240" height="216" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-5" value="-devices: List&amp;lt;Device&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-1">
+          <mxGeometry y="26" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-2" value="-id: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-1">
+          <mxGeometry y="52" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-1">
+          <mxGeometry y="78" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-8" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;addDevice&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;device&lt;/span&gt;: Device): &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-1">
+          <mxGeometry y="86" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-7" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;removeDevice&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;device&lt;/span&gt;: Device): &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-1">
+          <mxGeometry y="112" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-6" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;notifyDevices&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;message&lt;/span&gt;: Message): &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-1">
+          <mxGeometry y="138" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-9" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;getId&lt;/span&gt;(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-1">
+          <mxGeometry y="164" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-4" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;User&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;: String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-1">
+          <mxGeometry y="190" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-10" value="&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;Device&lt;/span&gt; (&lt;span class=&quot;hljs-keyword&quot;&gt;interface&lt;/span&gt;)&amp;nbsp;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="150" width="266" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-11" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-10">
+          <mxGeometry y="26" width="266" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-10">
+          <mxGeometry y="52" width="266" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-13" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;notify&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;message&lt;/span&gt;: Message): &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-10">
+          <mxGeometry y="60" width="266" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-14" value="" style="endArrow=none;html=1;endSize=12;startArrow=none;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="190" as="sourcePoint" />
+            <mxPoint x="440" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-15" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;" connectable="0" vertex="1" parent="4aABwrlP54jVIK6EkBrr-14">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-16" value="*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=top;" connectable="0" vertex="1" parent="4aABwrlP54jVIK6EkBrr-14">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="-10" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-18" value="MobileDevice    " style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="410" width="206" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-19" value=" -id: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-18">
+          <mxGeometry y="26" width="206" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-18">
+          <mxGeometry y="52" width="206" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-22" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;notify&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;message&lt;/span&gt;: Message): &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-18">
+          <mxGeometry y="60" width="206" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-21" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;MobileDevice&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;: String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-18">
+          <mxGeometry y="86" width="206" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-23" value="DesktopDevice   " style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="404" width="200" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-24" value="-id: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-23">
+          <mxGeometry y="26" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-23">
+          <mxGeometry y="52" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-26" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;DesktopDevice&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;: String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-23">
+          <mxGeometry y="60" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4aABwrlP54jVIK6EkBrr-27" value="+&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;notify&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;message&lt;/span&gt;: Message): &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="4aABwrlP54jVIK6EkBrr-23">
+          <mxGeometry y="86" width="200" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
