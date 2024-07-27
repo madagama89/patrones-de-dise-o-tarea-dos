@@ -1,18 +1,25 @@
-## Getting Started
+## Integrantes de equipo
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+- Marlon David Garcia Marin
+- Sergio Josue Rodriguez Taborda
+- Claudia Alexandra Bojaca Torres
 
-## Folder Structure
 
-The workspace contains two folders by default, where:
+## Patrón seleccionado
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Ejercicio 1: Patron Prototype
+- Ejercicio 2: Patron Observer
+- Ejercicio 3: Patron Template Method
+- Ejercicio 4: Patron Command
+- Ejercicio 5:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Estructura del proyecto
+#### Carpetas
+- `hero`: Clases relacionadas con el ejercicio 1
+- `messagingObserver`: Clases relacionadas con el ejercicio 2
+- `sistemaGestionTareas`: Clases relacionadas con el ejercicio 3
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+#### Archivos principales
+- `mainHero`: Clase principal para ejecutar el ejercicio 1
+- `mainMessagingObserver`: Clase principal para ejecutar el ejercicio 2
+- `mainSistemaGestionTreas`: Clase principal para ejecutar el ejercicio 3
