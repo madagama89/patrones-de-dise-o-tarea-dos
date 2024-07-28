@@ -15,10 +15,11 @@
 
 ## Estructura del proyecto
 #### Carpetas
+- `taller-patterns-deisgn`: Carpeta que contiene todo el proyecto en java. Esta es la que se debe abrir desde IntelliJ
 - `main.java.com.ejercicios`: Paquete principal
-- `hero`: Clases relacionadas con el ejercicio 1
-- `messagingObserver`: Clases relacionadas con el ejercicio 2
-- `sistemaGestionTareas`: Clases relacionadas con el ejercicio 3
+- `hero`: Carpeta que contiene las clases relacionadas con el ejercicio 1
+- `messagingObserver`: Carpeta que contiene las clases relacionadas con el ejercicio 2
+- `sistemaGestionTareas`: Carpeta que contiene las clases relacionadas con el ejercicio 3
 
 #### Archivos principales
 - `mainHero`: Clase para ejecutar el ejercicio 1
