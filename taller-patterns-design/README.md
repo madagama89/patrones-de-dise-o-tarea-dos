@@ -11,7 +11,7 @@
 - Ejercicio 2: Patron Observer
 - Ejercicio 3: Patron Template Method
 - Ejercicio 4: Patron Command
-- Ejercicio 5:
+- Ejercicio 5: Decorator
 
 ## Estructura del proyecto
 #### Carpetas
