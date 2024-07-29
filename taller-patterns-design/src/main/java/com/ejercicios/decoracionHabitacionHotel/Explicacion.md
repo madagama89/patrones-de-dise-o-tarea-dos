@@ -6,7 +6,7 @@ a objetos existentes utiizando envoltorios.
 - La clase `EnvoltorioDecoracionEstetica` y `EnvoltorioDecoracionEstructural` se encargan de extender el comportamiento de la 
 - super clase, estas pueden agregar nuevas funcionaldiades.
 
-- Las clases `IDecoradorHabitaciones` declara la interfaz común para envoltorios y los objetos envueltos.
+- Las clase `IDecoradorHabitaciones` declara la interfaz común para envoltorios y los objetos envueltos.
 
 - La clase `HabitacionesDecoradorBase`  delega todas las operaciones a los objetos envueltos.
 
