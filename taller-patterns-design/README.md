@@ -27,5 +27,5 @@
 - `mainHero`: Clase para ejecutar el ejercicio 1
 - `mainMessagingObserver`: Clase para ejecutar el ejercicio 2
 - `mainRestaurante`: Clase para ejecutar el ejercicio 3
-- `mainSistemaGestionTreas`: Clase para ejecutar el ejercicio 4
+- `mainSistemaGestionTareas`: Clase para ejecutar el ejercicio 4
 - `mainDecoracionHabitacionHotel`: Clase para ejecutar el ejercicio 5
