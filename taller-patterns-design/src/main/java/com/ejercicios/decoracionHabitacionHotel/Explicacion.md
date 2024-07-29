@@ -1,7 +1,7 @@
 
 ### Ejercicio 5:
 El patron escogido (Decorator) nos permite agregar comportamientos de forma dinamica
-a objetos existentes utiizando envoltorios
+a objetos existentes utiizando envoltorios.
 
 - La clase `EnvoltorioDecoracionEstetica` y `EnvoltorioDecoracionEstructural` se encargan de extender el comportamiento de la 
 - super clase, estas pueden agregar nuevas funcionaldiades.
