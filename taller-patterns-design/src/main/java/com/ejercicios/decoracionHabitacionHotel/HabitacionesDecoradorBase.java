@@ -1,31 +1,35 @@
 package main.java.com.ejercicios.decoracionHabitacionHotel;
 
-public class HabitacionesDecoradorBase implements IDecorarHabitaciones{
+public abstract class HabitacionesDecoradorBase implements IDecorarHabitaciones{
 
     private IDecorarHabitaciones envoltorio;
-
 
     public HabitacionesDecoradorBase(IDecorarHabitaciones envoltorio) {
         this.envoltorio = envoltorio;
     }
 
     @Override
-    public String agregarCortinas(String tipoCortina) {
-        return envoltorio.agregarCortinas(tipoCortina);
+    public void agregarCortinas() {
+        envoltorio.agregarCortinas();
     }
 
     @Override
-    public void agregarBebidas(String tipoBebida) {
-        envoltorio.agregarBebidas(tipoBebida);
+    public void agregarBebidas() {
+        envoltorio.agregarBebidas();
     }
 
     @Override
-    public void agregarFlores(String tipoFlores) {
-        envoltorio.agregarFlores(tipoFlores);
+    public void agregarFlores() {
+        envoltorio.agregarFlores();
     }
 
     @Override
-    public void mostrarHabitacion() {
-        envoltorio.mostrarHabitacion();
+    public void incluirServicios() {
+        envoltorio.incluirServicios();
+    }
+
+    @Override
+    public void agregarCamas() {
+        envoltorio.agregarCamas();
     }
 }

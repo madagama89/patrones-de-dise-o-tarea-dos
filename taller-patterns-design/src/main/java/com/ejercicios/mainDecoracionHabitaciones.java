@@ -2,45 +2,51 @@ package main.java.com.ejercicios;
 
 import main.java.com.ejercicios.decoracionHabitacionHotel.*;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-
 public class mainDecoracionHabitaciones {
 
-    static boolean activarMejoraComida = false;
-   static  boolean activarMejoraEstetica = true;
+    static boolean activarMejoraEstrucutral = false;
+   static  boolean activarMejoraEstetica = false;
 
     public static void main(String[] args) {
 
-        IDecorarHabitaciones habitacion = new IDecorarHabitaciones();
-
-       /* Habitaciones habitacion = new Habitaciones("uno");
-        HabitacionesDecoradorBase habitacionP = new DecoracionesTipoB(
-                new DecoracionesTipoA(
-                        new Habitaciones("Uno")
+       //Implementacion 1
+        Habitaciones habitacion = new Habitaciones("Suite");
+        HabitacionesDecoradorBase habitacionuite = new EnvoltorioDecoracionEstructural(
+                new EnvoltorioDecoracionEstetica(
+                        habitacion
                 )
-        );*/
+        );
 
-        System.out.println("Habitacion sencilla ");
-        habitacion.mostrarHabitacion();
+        habitacionuite.agregarCortinas();
+        habitacionuite.agregarCamas();
 
-        if (activarMejoraComida)
+        habitacionuite.agregarFlores();
+        habitacionuite.agregarBebidas();
+        habitacionuite.incluirServicios();
+
+        
+        //Implementacion 2
+        IDecorarHabitaciones habitacionPrincipal ;
+        habitacionPrincipal = new Habitaciones("Principal");
+
+
+        //Cambiar el valor de las variables para activar las modificaciones
+        if (activarMejoraEstrucutral)
         {
-            habitacion = new DecoracionesTipoB(habitacion);
+            System.out.println("Personalizar estrucutra habitación");
+            habitacionPrincipal = new EnvoltorioDecoracionEstructural(habitacionPrincipal);
         }
         if (activarMejoraEstetica)
         {
-            new DecoracionesTipoA(habitacion);
+            System.out.println("Personalizar estetica habitación");
+            habitacionPrincipal =  new EnvoltorioDecoracionEstetica(habitacionPrincipal);
         }
 
-        /*habitacion.agregarCortinas("Sencilla");
-        habitacion.agregarFlores("Rosa");
-        habitacion.agregarBebidas("CocaCola");
-*/
+        habitacionPrincipal.agregarCortinas();
+        habitacionPrincipal.agregarCamas();
 
-        System.out.println("Ajsute coritnas");
-        System.out.println(habitacion.agregarCortinas("Medio"));
-
-        System.out.println("Habitacion Premiun ");
-        habitacion.mostrarHabitacion();
+        habitacionPrincipal.agregarFlores();
+        habitacionPrincipal.agregarBebidas();
+        habitacionPrincipal.incluirServicios();
     }
 }

@@ -1,46 +1,40 @@
 package main.java.com.ejercicios.decoracionHabitacionHotel;
 
-public class Habitaciones implements IDecorarHabitaciones{
+public class Habitaciones implements IDecorarHabitaciones {
 
     private String habitacion;
     private String flores = "Margaritas";
-    private String cortinas = "Sencillas";
     private String bebidas = "Agua";
+    private String servicios = "Tender camas";
+    private String tipoCortinas = "Sencillas";
+    private int camas = 2;
 
     public Habitaciones(String habitacion) {
         this.habitacion = habitacion;
     }
 
     @Override
-    public String agregarCortinas(String tipoCortina) {
-        this.cortinas = tipoCortina;
-        System.out.println("Se agregaron cortinas " + tipoCortina + "a la habitación");
-        return  this.cortinas;
+    public void agregarCortinas() {
+        System.out.print("\n La habitacion tiene cortinas: " + this.tipoCortinas);
     }
 
     @Override
-    public void agregarBebidas(String tipoBebida) {
-        System.out.println("Se agregaron bebidas " + tipoBebida + "a la habitación");
-        this.bebidas = tipoBebida;
+    public void agregarBebidas() {
+        System.out.print("\n Se agregaron bebidas " + this.bebidas + " a la habitación");
     }
 
     @Override
-    public void agregarFlores(String tipoFlores) {
-        this.flores = tipoFlores;
-        System.out.println("Se agregaron flores " + tipoFlores + "a la habitación");
+    public void agregarFlores() {
+        System.out.print("\n Se agregaron flores " + this.flores + " a la habitación");
     }
 
     @Override
-    public void mostrarHabitacion() {
-        System.out.println("---Habitacion---");
-        System.out.println(this.bebidas);
-        System.out.println(this.cortinas);
-        System.out.println(this.flores);
+    public void incluirServicios() {
+        System.out.print("\n Se agregaron estos servicios a la habitación: " + this.servicios);
     }
 
-    public  void verHbitaciones()
-    {
-
+    @Override
+    public void agregarCamas() {
+        System.out.print("\n La habitación tiene " + this.camas + " camas");
     }
-
 }
