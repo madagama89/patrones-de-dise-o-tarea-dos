@@ -11,7 +11,7 @@
 - Ejercicio 2: Patron Observer
 - Ejercicio 3: Patron Template Method
 - Ejercicio 4: Patron Command
-- Ejercicio 5:
+- Ejercicio 5: Decorator
 
 ## Estructura del proyecto
 #### Carpetas
@@ -19,9 +19,13 @@
 - `main.java.com.ejercicios`: Paquete principal
 - `hero`: Carpeta que contiene las clases relacionadas con el ejercicio 1
 - `messagingObserver`: Carpeta que contiene las clases relacionadas con el ejercicio 2
-- `sistemaGestionTareas`: Carpeta que contiene las clases relacionadas con el ejercicio 3
+- `gestionRestaurantes`: Carpeta que contiene las clases relacionadas con el ejercicio 3
+- `sistemaGestionTareas`: Carpeta que contiene las clases relacionadas con el ejercicio 4
+- `decoracionHabitacionHotel`: Carpeta que contiene las clases relacionadas con el ejercicio 5
 
 #### Archivos principales
 - `mainHero`: Clase para ejecutar el ejercicio 1
 - `mainMessagingObserver`: Clase para ejecutar el ejercicio 2
-- `mainSistemaGestionTreas`: Clase para ejecutar el ejercicio 3
+- `mainRestaurante`: Clase para ejecutar el ejercicio 3
+- `mainSistemaGestionTareas`: Clase para ejecutar el ejercicio 4
+- `mainDecoracionHabitacionHotel`: Clase para ejecutar el ejercicio 5
