@@ -5,11 +5,19 @@ import main.java.com.ejercicios.decoracionHabitacionHotel.*;
 public class mainDecoracionHabitaciones {
 
     static boolean activarMejoraEstrucutral = false;
-   static  boolean activarMejoraEstetica = false;
+    static  boolean activarMejoraEstetica = false;
 
     public static void main(String[] args) {
 
-       //Implementacion 1
+        //Implementacion 1
+        implemntacion1();
+
+        //Implementacion 2
+        //Cambiar el valor de las variables para activar las modificaciones
+        implemntacion2();
+    }
+
+    public static void implemntacion1(){
         Habitaciones habitacion = new Habitaciones("Suite");
         HabitacionesDecoradorBase habitacionuite = new EnvoltorioDecoracionEstructural(
                 new EnvoltorioDecoracionEstetica(
@@ -23,12 +31,12 @@ public class mainDecoracionHabitaciones {
         habitacionuite.agregarFlores();
         habitacionuite.agregarBebidas();
         habitacionuite.incluirServicios();
+    }
 
-        
-        //Implementacion 2
+
+    public static void implemntacion2() {
         IDecorarHabitaciones habitacionPrincipal ;
         habitacionPrincipal = new Habitaciones("Principal");
-
 
         //Cambiar el valor de las variables para activar las modificaciones
         if (activarMejoraEstrucutral)
